@@ -35,21 +35,33 @@ export default function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2 group">
-              <Download className="w-5 h-5" />
-              Download Resume
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="gap-2 group bg-transparent hover:bg-accent/10"
-              onClick={handleViewProjects}
-            >
-              VIEW PROJECTS
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
+         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+  <a
+    href="/Akash_K_Software_Developer_Resume.pdf"
+    download="Akash_K_Software_Developer_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Button
+      size="lg"
+      className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2 group"
+    >
+      <Download className="w-5 h-5" />
+      Download Resume
+    </Button>
+  </a>
+
+  <Button
+    size="lg"
+    variant="outline"
+    className="gap-2 group bg-transparent hover:bg-accent/10"
+    onClick={handleViewProjects}
+  >
+    VIEW PROJECTS
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+  </Button>
+</div>
+
 
           {/* Quick stats */}
           <div className="flex flex-col sm:flex-row gap-8 pt-8 border-t border-border/50 justify-center mx-auto">
