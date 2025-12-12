@@ -36,11 +36,16 @@ export default function Hero() {
 
           {/* CTA Buttons */}
          <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
+<div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
   <a
     href="/Akash_K_Software_Developer_Resume.pdf"
     download="Akash_K_Software_Developer_Resume.pdf"
     target="_blank"
-    rel="noopener noreferrer"
+    rel="noopener noreferrer nofollow"
+    aria-label="Download Akash K resume as PDF"
+    title="Download resume (PDF)"
+    role="button"
+    className="inline-block"
   >
     <Button
       size="lg"
@@ -61,6 +66,7 @@ export default function Hero() {
     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
   </Button>
 </div>
+
 
 
           {/* Quick stats */}
