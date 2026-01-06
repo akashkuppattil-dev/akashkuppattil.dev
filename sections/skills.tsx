@@ -6,138 +6,89 @@ import {
   Zap,
   Settings,
   Cpu,
-  FileText,
-  Lock,
-  Users,
-  CheckCircle,
-  BarChart3,
-  Cloud,
   Braces,
   Box,
   Palette,
   TerminalSquare,
-  GitCompare,
-  FolderOpen,
+  Globe,
+  Server,
+  Workflow,
+  ShieldCheck,
 } from "lucide-react"
-
-const skillsWithIcons = {
-  // Languages
-  Python: Code2,
-  JavaScript: Braces,
-  TypeScript: Cpu,
-  Java: Box,
-  PHP: Code2,
-
-  // Frameworks / Backend
-  Django: TerminalSquare,
-  "Node.js": Box,
-  NestJS: Zap,
-  Laravel: Palette,
-  CodeIgniter: Code2,
-
-  // Frontend
-  HTML: Code2,
-  CSS: Palette,
-  Bootstrap: Box,
-  "React.js": Braces,
-  "Tailwind CSS": Palette,
-
-  // Databases
-  MySQL: Database,
-  PostgreSQL: Database,
-  MongoDB: Database,
-
-  // Tools
-  Git: GitCompare,
-  GitHub: GitBranch,
-  Docker: Box,
-  Postman: FolderOpen,
-  cPanel: Cloud,
-
-  // Other Technical Skills
-  JWT: Lock,
-  RBAC: Lock,
-  SDLC: FileText,
-  "Agile/Scrum": Users,
-  Testing: CheckCircle,
-  Excel: BarChart3,
-  "Power BI": BarChart3,
-}
 
 const skillCategories = [
   {
-    title: "Languages",
-    icon: Code2,
-    skills: ["Python", "JavaScript", "TypeScript", "Java", "PHP"],
-  },
-  {
-    title: "Frameworks / Backend",
-    icon: Zap,
-    skills: ["Django", "Node.js", "NestJS", "Laravel", "CodeIgniter"],
-  },
-  {
-    title: "Frontend",
+    title: "AI & Innovation",
     icon: Cpu,
-    skills: ["HTML", "CSS", "Bootstrap", "React.js", "Tailwind CSS"],
+    description: "Integrating intelligence into digital experiences.",
+    skills: ["Prompt Engineering", "LLMs (OpenAI, Anthropic)", "AI Tools & Automation", "LangChain", "Vector Databases"],
   },
   {
-    title: "Databases",
-    icon: Database,
-    skills: ["MySQL", "PostgreSQL", "MongoDB"],
+    title: "Frontend Engineering",
+    icon: Globe,
+    description: "Crafting premium user interfaces and experiences.",
+    skills: ["React.js (Expert)", "TypeScript", "Next.js", "Tailwind CSS", "UI/UX Design", "Figma"],
   },
   {
-    title: "Tools",
-    icon: GitBranch,
-    skills: ["Git", "GitHub", "Docker", "Postman", "cPanel"],
+    title: "Backend & Systems",
+    icon: Server,
+    description: "Architecting scalable and secure server-side logic.",
+    skills: ["Python", "Django", "Node.js", "NestJS", "PHP", "Laravel", "PostgreSQL", "MySQL"],
   },
   {
-    title: "Other Technical Skills",
-    icon: Settings,
-    skills: ["JWT", "RBAC", "SDLC", "Agile/Scrum", "Testing", "Excel", "Power BI"],
+    title: "DevOps & Logic",
+    icon: Workflow,
+    description: "Streamlining deployment and application flow.",
+    skills: ["Docker", "Vercel", "Git", "GitHub Actions", "JWT", "RBAC", "System Design"],
   },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-2">SKILLS & EXPERTISE</h2>
-          <div className="w-12 h-1 bg-accent rounded"></div>
+          <h2 className="section-title">Technical Expertise</h2>
+          <div className="section-accent"></div>
+          <p className="text-muted-foreground text-lg max-w-2xl">
+            A comprehensive suite of technologies and methodologies I use to bring ideas to life.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => {
-            const Icon = category.icon
-            return (
-              <Card
-                key={idx}
-                className="p-6 border-border/50 glass hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/20"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-background" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {skillCategories.map((category, idx) => (
+            <Card
+              key={idx}
+              className="premium-card p-6 sm:p-8 group overflow-hidden relative"
+            >
+              {/* Background Icon Decoration */}
+              <category.icon className="absolute -right-4 -bottom-4 w-32 h-32 text-accent/5 -rotate-12 group-hover:scale-110 group-hover:text-accent/10 transition-all duration-500" />
+
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                    <category.icon className="w-6 h-6 sm:w-7 sm:h-7 text-accent group-hover:text-background" />
                   </div>
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
+                  <h3 className="text-xl font-black uppercase tracking-tight">{category.title}</h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, i) => {
-                    const SkillIcon = skillsWithIcons[skill] || Code2
-                    return (
-                      <div
-                        key={i}
-                        className="px-3 py-1.5 text-sm rounded-full bg-background border border-border/50 text-foreground/80 hover:border-accent/50 transition-colors flex items-center gap-1.5 group hover:bg-background/80"
-                      >
-                        <SkillIcon className="w-3.5 h-3.5 text-accent group-hover:text-accent" />
-                        <span>{skill}</span>
-                      </div>
-                    )
-                  })}
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {category.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {category.skills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 text-[10px] sm:text-xs font-black uppercase tracking-widest rounded-lg bg-background border border-border/50 text-foreground/70 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              </Card>
-            )
-          })}
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

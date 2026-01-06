@@ -42,48 +42,43 @@ export default function Experience() {
           <div className="w-12 h-1 bg-accent rounded"></div>
         </div>
 
-        <div className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8">
           {experiences.map((exp, idx) => (
             <div key={idx} className="relative">
-              {/* Timeline connector */}
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-accent ml-6"></div>
-
-              {/* Timeline dot */}
-              <div className="hidden md:block absolute left-0 top-6 w-14 h-14 bg-background border-4 border-accent rounded-full flex items-center justify-center ml-0">
-                <div className="w-3 h-3 bg-accent rounded-full"></div>
-              </div>
+              {/* Timeline connector (hidden on mobile, shown on desktop) */}
+              <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[2px] bg-accent/20 ml-6"></div>
 
               {/* Content */}
-              <Card className="p-6 md:ml-32 border-border/50 glass hover:border-accent/50 transition-all">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="text-xl font-bold text-foreground">{exp.title}</h3>
-                    <p className="text-lg text-accent font-semibold">{exp.company}</p>
+              <Card className="p-6 sm:p-8 lg:ml-24 premium-card group">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-black uppercase tracking-tight">{exp.title}</h3>
+                    <p className="text-lg text-accent font-bold tracking-tight">{exp.company}</p>
                   </div>
-                  <div className="flex flex-col gap-2">
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Calendar className="w-4 h-4" />
-                      <span className="text-sm font-medium">{exp.period}</span>
+                  <div className="flex flex-col sm:items-end gap-1.5">
+                    <div className="flex items-center gap-2 text-muted-foreground font-bold text-xs uppercase tracking-widest">
+                      <Calendar className="w-3.5 h-3.5" />
+                      <span>{exp.period}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-sm font-medium">{exp.location}</span>
+                    <div className="flex items-center gap-2 text-muted-foreground font-bold text-xs uppercase tracking-widest">
+                      <MapPin className="w-3.5 h-3.5" />
+                      <span>{exp.location}</span>
                     </div>
                   </div>
                 </div>
 
-                <ul className="space-y-2 mb-4">
+                <ul className="space-y-3 mb-8">
                   {exp.highlights.map((highlight, i) => (
-                    <li key={i} className="flex gap-3 text-foreground/80">
-                      <span className="text-accent font-bold mt-1">•</span>
+                    <li key={i} className="flex gap-3 text-sm sm:text-base text-foreground/80 leading-relaxed">
+                      <span className="text-accent font-black mt-1">•</span>
                       <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
                   {exp.skills.map((skill, i) => (
-                    <Badge key={i} variant="secondary" className="bg-background border-border/50">
+                    <Badge key={i} variant="secondary" className="bg-accent/5 text-accent border-accent/10 px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-lg">
                       {skill}
                     </Badge>
                   ))}

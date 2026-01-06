@@ -3,6 +3,7 @@ import Navigation from "@/sections/navigation"
 import Hero from "@/sections/hero"
 import About from "@/sections/about"
 import Skills from "@/sections/skills"
+import Services from "@/sections/services"
 import Experience from "@/sections/experience"
 import Projects from "@/sections/projects"
 import Education from "@/sections/education"
@@ -20,8 +21,9 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
-        <Experience />
         <Projects />
+        <Services />
+        <Experience />
         <Education />
         <Certifications />
         <Blog />

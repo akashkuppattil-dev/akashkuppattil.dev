@@ -8,15 +8,15 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AKASH K — Software Developer",
+  title: "AKASH K — Software Developer | Full-Stack Architect",
   description:
-    "Software Developer specializing in Python, Django, React, and NestJS. Building scalable web applications and robust backend systems.",
-  generator: "v0.app",
-  keywords: "Developer, Python, Django, React, NestJS, Full-stack, Backend",
+    "Professional Software Developer and Full-Stack Architect specializing in Python (Django), Node.js (NestJS), and React. Engineering scalable, high-performance web systems and available for freelance/contract opportunities.",
+  keywords: "Software Developer, Full-Stack Developer, Web Architect, Python Django Expert, NestJS Developer, React Developer, Freelance Developer India, Backend Specialist",
   openGraph: {
-    title: "AKASH K — Software Developer",
-    description: "Full-stack developer with expertise in Python, Django, React, and modern backend technologies.",
+    title: "AKASH K — Software Developer | Full-Stack Architect",
+    description: "Engineering scalable web systems with Python, Django, React, and modern backend technologies. Available for high-impact roles and contracts.",
     type: "website",
+    url: "https://akashkuppattil.dev",
   },
   icons: {
     icon: [
