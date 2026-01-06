@@ -37,11 +37,11 @@ export default function Blog() {
           <div className="w-12 h-1 bg-gradient-to-r from-accent to-primary rounded"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
           {blogs.map((blog, idx) => (
             <Card
               key={idx}
-              className="p-6 border-border/50 glass hover:border-accent/50 transition-all hover:shadow-lg hover:shadow-accent/20 flex flex-col"
+              className="p-6 border-border/50 glass hover:border-accent/50 transition-all hover:shadow-lg hover:shadow-accent/20 flex flex-col min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center"
             >
               <div className="flex items-center justify-between mb-4">
                 <span className="text-xs font-semibold text-accent uppercase tracking-wider">{blog.category}</span>

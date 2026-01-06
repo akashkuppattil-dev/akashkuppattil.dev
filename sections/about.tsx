@@ -34,9 +34,9 @@ export default function About() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 mb-12">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-hidden pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide mb-12">
           {mindsets.map((item, idx) => (
-            <Card key={idx} className="premium-card p-6 sm:p-7 space-y-4">
+            <Card key={idx} className="premium-card p-6 sm:p-7 space-y-4 min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center">
               <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center">
                 <item.icon className="w-7 h-7 text-accent" />
               </div>

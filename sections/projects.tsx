@@ -55,73 +55,71 @@ export default function Projects() {
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="flex lg:flex-col gap-6 lg:gap-16 overflow-x-auto lg:overflow-visible pb-8 lg:pb-0 snap-x snap-mandatory scrollbar-hide">
           {projects.map((project, idx) => (
-            <div key={idx} className={`flex flex-col ${idx % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-10 items-center`}>
-              {/* Image side */}
-              <div className="flex-1 w-full order-last lg:order-none">
-                <div className="relative group overflow-hidden rounded-2xl border border-border/50 shadow-2xl shadow-accent/5">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full aspect-video object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+            <Card key={idx} className="premium-card overflow-hidden border-border/50 min-w-[300px] sm:min-w-[450px] lg:min-w-0 snap-center flex flex-col lg:flex-row gap-0 group">
+              {/* Cover Image Side */}
+              <div className="w-full lg:w-2/5 relative overflow-hidden shrink-0">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-[200px] sm:h-[250px] lg:h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-background/20"></div>
+
+                {/* Overlay Icon */}
+                <div className="absolute top-4 left-4 w-10 h-10 rounded-xl bg-background/80 backdrop-blur-md flex items-center justify-center border border-white/20">
+                  <project.icon className="w-5 h-5 text-accent" />
                 </div>
               </div>
 
-              {/* Content side */}
-              <div className="flex-1 space-y-6">
-                <div className="space-y-2">
-                  <Badge variant="outline" className="text-accent border-accent/30 tracking-widest uppercase text-[10px] px-3">
-                    {project.category}
-                  </Badge>
-                  <h3 className="text-3xl font-black tracking-tight leading-tight">{project.title}</h3>
-                </div>
-
-                <div className="space-y-4">
+              {/* Content Side */}
+              <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                <div className="flex justify-between items-start mb-4">
                   <div className="space-y-1">
-                    <p className="text-xs font-bold text-accent uppercase tracking-widest">The Problem</p>
-                    <p className="text-muted-foreground leading-relaxed">{project.problem}</p>
+                    <Badge variant="outline" className="text-accent border-accent/20 tracking-widest uppercase text-[9px] px-2 py-0">
+                      {project.category}
+                    </Badge>
+                    <h3 className="text-xl sm:text-2xl font-black tracking-tight leading-tight uppercase line-clamp-2">{project.title}</h3>
                   </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-bold text-accent uppercase tracking-widest">The Solution</p>
-                    <p className="text-muted-foreground leading-relaxed">{project.solution}</p>
+                  <div className="hidden sm:flex gap-2">
+                    <Button variant="ghost" size="icon" className="w-10 h-10 rounded-lg hover:bg-accent/10 text-muted-foreground hover:text-accent" onClick={() => window.open(project.github, "_blank")}>
+                      <Github className="w-5 h-5" />
+                    </Button>
                   </div>
                 </div>
 
-                <div className="space-y-3">
-                  <p className="text-xs font-black uppercase tracking-[0.2em] text-accent">Key Outcomes</p>
-                  <ul className="space-y-3">
-                    {project.outcomes.map((outcome, i) => (
-                      <li key={i} className="flex items-start gap-3 text-sm text-foreground/80 leading-snug">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                        {outcome}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="space-y-4 mb-6 flex-grow">
+                  <div className="space-y-1">
+                    <p className="text-[10px] font-black text-accent uppercase tracking-widest leading-none">The Problem</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-3 italic opacity-80">
+                      "{project.problem}"
+                    </p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-[10px] font-black text-primary uppercase tracking-widest leading-none">The Solution</p>
+                    <p className="text-xs sm:text-sm text-foreground/90 leading-relaxed line-clamp-2 sm:line-clamp-3">
+                      {project.solution}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="pt-6 flex flex-col sm:flex-row gap-4 sm:items-center">
-                  <div className="flex flex-wrap gap-2 order-2 sm:order-1">
-                    {project.tech.map((t, i) => (
-                      <span key={i} className="px-2 py-1 text-[9px] font-black uppercase tracking-widest rounded bg-accent/10 text-accent border border-accent/20">
+                {/* Tech & Action */}
+                <div className="pt-4 border-t border-border/50 flex flex-col sm:flex-row justify-between items-center gap-4">
+                  <div className="flex flex-wrap gap-1.5 w-full sm:w-auto">
+                    {project.tech.slice(0, 3).map((t, i) => (
+                      <span key={i} className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-tighter bg-accent/5 text-accent/80 border border-accent/10 rounded">
                         {t}
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3 order-1 sm:order-2">
-                    <Button variant="outline" size="icon" className="w-12 h-12 rounded-xl border-primary/20 hover:border-accent hover:text-accent" onClick={() => window.open(project.github, "_blank")}>
-                      <Github className="w-5 h-5" />
-                    </Button>
-                    <Button size="lg" className="flex-grow sm:flex-grow-0 h-12 px-8 rounded-xl bg-accent hover:bg-accent/90 text-accent-foreground font-black text-xs uppercase tracking-widest" onClick={() => window.open(project.link, "_blank")}>
-                      LIVE DEMO
-                      <ExternalLink className="ml-2 w-3 h-3" />
-                    </Button>
-                  </div>
+                  <Button size="sm" className="w-full sm:w-auto px-6 h-10 rounded-xl bg-accent hover:bg-accent/90 text-accent-foreground font-black text-[10px] uppercase tracking-widest shadow-lg shadow-accent/10" onClick={() => window.open(project.link, "_blank")}>
+                    VIEW CASE STUDY
+                    <ExternalLink className="ml-2 w-3 h-3" />
+                  </Button>
                 </div>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

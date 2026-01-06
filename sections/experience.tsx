@@ -42,25 +42,25 @@ export default function Experience() {
           <div className="w-12 h-1 bg-accent rounded"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+        <div className="flex lg:grid lg:grid-cols-1 gap-6 overflow-x-auto lg:overflow-hidden pb-8 lg:pb-0 snap-x snap-mandatory scrollbar-hide">
           {experiences.map((exp, idx) => (
-            <div key={idx} className="relative">
+            <div key={idx} className="relative min-w-[300px] sm:min-w-[400px] lg:min-w-0 snap-center">
               {/* Timeline connector (hidden on mobile, shown on desktop) */}
               <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[2px] bg-accent/20 ml-6"></div>
 
               {/* Content */}
-              <Card className="p-6 sm:p-7 lg:ml-24 premium-card group">
+              <Card className="p-6 sm:p-7 lg:ml-24 premium-card group h-full">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
                   <div className="space-y-1">
                     <h3 className="text-xl font-black uppercase tracking-tight">{exp.title}</h3>
                     <p className="text-lg text-accent font-bold tracking-tight">{exp.company}</p>
                   </div>
-                  <div className="flex flex-col sm:items-end gap-1.5">
-                    <div className="flex items-center gap-2 text-muted-foreground font-bold text-xs uppercase tracking-widest">
+                  <div className="flex flex-col sm:items-end gap-1.5 text-xs">
+                    <div className="flex items-center gap-2 text-muted-foreground font-bold uppercase tracking-widest">
                       <Calendar className="w-3.5 h-3.5" />
                       <span>{exp.period}</span>
                     </div>
-                    <div className="flex items-center gap-2 text-muted-foreground font-bold text-xs uppercase tracking-widest">
+                    <div className="flex items-center gap-2 text-muted-foreground font-bold uppercase tracking-widest">
                       <MapPin className="w-3.5 h-3.5" />
                       <span>{exp.location}</span>
                     </div>
@@ -76,7 +76,7 @@ export default function Experience() {
                   ))}
                 </ul>
 
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50 mt-auto">
                   {exp.skills.map((skill, i) => (
                     <Badge key={i} variant="secondary" className="bg-accent/5 text-accent border-accent/10 px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-lg">
                       {skill}

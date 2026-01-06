@@ -20,11 +20,11 @@ export default function Certifications() {
           <div className="w-12 h-1 bg-accent rounded"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 snap-x snap-mandatory scrollbar-hide">
           {certifications.map((cert, idx) => (
             <Card
               key={idx}
-              className="p-6 border-border/50 glass hover:border-accent/50 transition-all hover:shadow-lg hover:shadow-accent/20"
+              className="p-6 border-border/50 glass hover:border-accent/50 transition-all hover:shadow-lg hover:shadow-accent/20 min-w-[280px] sm:min-w-[320px] md:min-w-0 snap-center flex flex-col"
             >
               <div className="flex items-start gap-4 mb-3">
                 <div className="text-3xl">{cert.icon}</div>
@@ -34,7 +34,7 @@ export default function Certifications() {
               <h3 className="text-lg font-bold text-foreground mb-2">{cert.title}</h3>
               <p className="text-sm text-muted-foreground mb-4">{cert.provider}</p>
 
-              <Badge variant="secondary" className="text-xs bg-background border-border/50">
+              <Badge variant="secondary" className="text-xs bg-background border-border/50 mt-auto w-fit">
                 Certified
               </Badge>
             </Card>
