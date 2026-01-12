@@ -1,17 +1,12 @@
 import { ThemeProvider } from "@/components/theme-provider"
-import Navigation from "@/sections/navigation"
-import Hero from "@/sections/hero"
 import About from "@/sections/about"
-import Skills from "@/sections/skills"
-import Services from "@/sections/services"
-import Experience from "@/sections/experience"
-import Projects from "@/sections/projects"
-import Education from "@/sections/education"
-import Certifications from "@/sections/certifications"
-import Blog from "@/sections/blog"
-import Resume from "@/sections/resume"
 import Contact from "@/sections/contact"
 import Footer from "@/sections/footer"
+import Hero from "@/sections/hero"
+import Navigation from "@/sections/navigation"
+import Process from "@/sections/process"
+import Services from "@/sections/services"
+import Work from "@/sections/work"
 
 export default function Home() {
   return (
@@ -19,15 +14,10 @@ export default function Home() {
       <Navigation />
       <main className="overflow-hidden">
         <Hero />
-        <About />
-        <Skills />
-        <Projects />
+        <Process />
         <Services />
-        <Experience />
-        <Education />
-        <Certifications />
-        <Blog />
-        <Resume />
+        <Work />
+        <About />
         <Contact />
       </main>
       <Footer />

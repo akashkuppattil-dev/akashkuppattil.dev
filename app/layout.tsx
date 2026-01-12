@@ -1,20 +1,20 @@
-import type React from "react"
+import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
+import type React from "react"
 import "./globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AKASH K — Software Developer | Full-Stack Architect",
+  title: "AKASH K — Web Development, UI Design & Digital Services",
   description:
-    "Professional Software Developer and Full-Stack Architect specializing in Python (Django), Node.js (NestJS), and React. Engineering scalable, high-performance web systems and available for freelance/contract opportunities.",
-  keywords: "Software Developer, Full-Stack Developer, Web Architect, Python Django Expert, NestJS Developer, React Developer, Freelance Developer India, Backend Specialist",
+    "Professional freelance web developer and designer. I build modern websites, landing pages, web applications, and handle UI/UX design for businesses. Fast delivery, clean code, responsive design, and ongoing support.",
+  keywords: "Web Developer, Web Designer, Freelance Web Developer, Landing Page Design, Business Website, Web Application Development, UI/UX Design, Responsive Web Design, India",
   openGraph: {
-    title: "AKASH K — Software Developer | Full-Stack Architect",
-    description: "Engineering scalable web systems with Python, Django, React, and modern backend technologies. Available for high-impact roles and contracts.",
+    title: "AKASH K — Web Development & Design Services",
+    description: "Build your digital presence with professional web development and UI/UX design. Fast, reliable, and client-focused services.",
     type: "website",
     url: "https://akashkuppattil.dev",
   },

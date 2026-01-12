@@ -4,11 +4,10 @@ import { Code2, Menu, Moon, Sun, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import { useEffect, useRef, useState } from "react"
 const navLinks = [
-  { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
   { name: "Services", href: "#services" },
-  { name: "Experience", href: "#experience" },
-  { name: "Projects", href: "#projects" },
+  { name: "Work", href: "#work" },
+  { name: "How It Works", href: "#process" },
+  { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -48,7 +47,7 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo - Freelancer branding */}
           <div
             className="flex items-center gap-2 group cursor-pointer"
             onClick={() => {
@@ -59,8 +58,8 @@ export default function Navigation() {
             <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-background shadow-lg shadow-accent/20 transition-transform group-hover:scale-110">
               <Code2 className="w-5 h-5 transition-transform group-hover:rotate-12" />
             </div>
-            <span className="text-lg font-black tracking-tighter uppercase">
-              Akash <span className="text-accent underline decoration-accent/30 underline-offset-4">K</span>
+            <span className="text-lg font-bold tracking-tight">
+              Akash K
             </span>
           </div>
 
@@ -79,8 +78,8 @@ export default function Navigation() {
             )}
 
             <a href="#contact" className="hidden sm:block">
-              <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground font-black px-6 rounded-full shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5">
-                CONNECT
+              <Button size="sm" className="bg-accent hover:bg-accent/90 text-background font-bold px-6 rounded-lg shadow-lg shadow-accent/20 transition-all hover:-translate-y-0.5">
+                Start Project
               </Button>
             </a>
 
@@ -121,10 +120,10 @@ export default function Navigation() {
                 {link.name}
               </a>
             ))}
-            <div className="pt-6">
+          <div className="pt-6">
               <a href="#contact" onClick={() => setMobileOpen(false)}>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-black h-14 uppercase tracking-widest text-sm rounded-2xl shadow-xl shadow-accent/20">
-                  CONNECT
+                <Button className="w-full bg-accent hover:bg-accent/90 text-background font-bold h-14 uppercase tracking-tight text-sm rounded-lg shadow-xl shadow-accent/20">
+                  Start Project
                 </Button>
               </a>
             </div>
