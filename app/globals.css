@@ -20,6 +20,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -36,70 +37,71 @@
 }
 
 :root {
-  /* Light Theme - Light Orange/Warm Shade */
-  --primary: oklch(0.6 0.15 40);
-  --primary-foreground: oklch(0.98 0.01 0);
-  --accent: oklch(0.65 0.18 35);
-  --accent-foreground: oklch(0.98 0.01 0);
-  --background: oklch(0.97 0.02 40);
-  --foreground: oklch(0.2 0.02 40);
-  --card: oklch(0.96 0.02 40);
-  --card-foreground: oklch(0.2 0.02 40);
-  --muted: oklch(0.92 0.01 40);
-  --muted-foreground: oklch(0.45 0.02 40);
-  --border: oklch(0.9 0.01 40 / 0.1);
-  --input: oklch(0.94 0.01 40);
-  --ring: oklch(0.65 0.18 35);
-  --secondary: oklch(0.9 0.01 40);
-  --secondary-foreground: oklch(0.2 0.02 40);
+  /* Light Theme - Modern Vibrant Palette */
+  --primary: oklch(0.55 0.2 250);
+  --primary-foreground: oklch(0.99 0.01 250);
+  --accent: oklch(0.6 0.22 220);
+  --accent-foreground: oklch(0.99 0.01 0);
+  --background: oklch(0.98 0.005 250);
+  --foreground: oklch(0.15 0.02 250);
+  --card: oklch(0.99 0.005 250);
+  --card-foreground: oklch(0.15 0.02 250);
+  --muted: oklch(0.94 0.01 250);
+  --muted-foreground: oklch(0.5 0.02 250);
+  --border: oklch(0.88 0.01 250 / 0.15);
+  --input: oklch(0.96 0.01 250);
+  --ring: oklch(0.6 0.22 220);
+  --secondary: oklch(0.92 0.01 250);
+  --secondary-foreground: oklch(0.15 0.02 250);
   --destructive: oklch(0.55 0.22 25);
-  --destructive-foreground: oklch(0.98 0.01 0);
-  --radius: 1.25rem;
+  --destructive-foreground: oklch(0.99 0.01 0);
+  --radius: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
+
   .dark,
   :root.dark {
-    /* Dark Theme - Pure Black & White */
-    --primary: oklch(0.98 0.01 0);
-    --primary-foreground: oklch(0.05 0.01 0);
-    --accent: oklch(0.98 0.01 0);
-    --accent-foreground: oklch(0.05 0.01 0);
-    --background: oklch(0.05 0.01 0);
-    --foreground: oklch(0.98 0.01 0);
-    --card: oklch(0.1 0.01 0);
-    --card-foreground: oklch(0.98 0.01 0);
-    --muted: oklch(0.25 0.01 0);
-    --muted-foreground: oklch(0.8 0.01 0);
-    --border: oklch(0.2 0.01 0 / 0.2);
-    --input: oklch(0.12 0.01 0);
-    --ring: oklch(0.98 0.01 0);
-    --secondary: oklch(0.15 0.01 0);
-    --secondary-foreground: oklch(0.98 0.01 0);
+    /* Dark Theme - Pure Black & White Only */
+    --primary: oklch(0.98 0 0);
+    --primary-foreground: oklch(0.1 0 0);
+    --accent: oklch(0.98 0 0);
+    --accent-foreground: oklch(0.1 0 0);
+    --background: oklch(0.08 0 0);
+    --foreground: oklch(0.98 0 0);
+    --card: oklch(0.12 0 0);
+    --card-foreground: oklch(0.98 0 0);
+    --muted: oklch(0.25 0 0);
+    --muted-foreground: oklch(0.7 0 0);
+    --border: oklch(0.25 0 0 / 0.3);
+    --input: oklch(0.15 0 0);
+    --ring: oklch(0.98 0 0);
+    --secondary: oklch(0.18 0 0);
+    --secondary-foreground: oklch(0.98 0 0);
     --destructive: oklch(0.55 0.2 25);
-    --destructive-foreground: oklch(0.98 0.01 0);
+    --destructive-foreground: oklch(0.98 0 0);
   }
 }
 
 .dark {
-  /* Dark Theme - Pure Black & White */
-  --primary: oklch(0.98 0.01 0);
-  --primary-foreground: oklch(0.05 0.01 0);
-  --accent: oklch(0.98 0.01 0);
-  --accent-foreground: oklch(0.05 0.01 0);
-  --background: oklch(0.05 0.01 0);
-  --foreground: oklch(0.98 0.01 0);
-  --card: oklch(0.1 0.01 0);
-  --card-foreground: oklch(0.98 0.01 0);
-  --muted: oklch(0.25 0.01 0);
-  --muted-foreground: oklch(0.8 0.01 0);
-  --border: oklch(0.2 0.01 0 / 0.2);
-  --input: oklch(0.12 0.01 0);
-  --ring: oklch(0.98 0.01 0);
-  --secondary: oklch(0.15 0.01 0);
-  --secondary-foreground: oklch(0.98 0.01 0);
+  /* Dark Theme - Pure Black & White Only */
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.1 0 0);
+  --accent: oklch(0.98 0 0);
+  --accent-foreground: oklch(0.1 0 0);
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.7 0 0);
+  --border: oklch(0.25 0 0 / 0.3);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.98 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
   --destructive: oklch(0.55 0.2 25);
-  --destructive-foreground: oklch(0.98 0.01 0);
+  --destructive-foreground: oklch(0.98 0 0);
 }
 
 @theme inline {
@@ -136,24 +138,22 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-/* Reduced global scale by ~5% for professional compact view */
+/* Improved mobile font sizing for better readability */
 html {
-  font-size: 15px;
-  /* Reduced from 16px */
+  font-size: 16px;
+  /* Better base size for mobile */
   scroll-behavior: smooth;
 }
 
 @media (min-width: 640px) {
   html {
     font-size: 16px;
-    /* Reduced from 17px */
   }
 }
 
 @media (min-width: 1024px) {
   html {
     font-size: 17px;
-    /* Reduced from 18px */
   }
 }
 
@@ -188,7 +188,14 @@ body {
 }
 
 .premium-card {
-  @apply bg-card/50 backdrop-blur-xl border border-border/50 hover:border-accent/30 transition-all duration-300 hover:shadow-2xl hover:shadow-accent/10;
+  @apply bg-card/80 backdrop-blur-2xl border border-border/60 transition-all duration-500;
+  @apply hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/15 hover:scale-[1.02];
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+}
+
+.dark .premium-card {
+  background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
+  @apply hover:bg-card/90;
 }
 
 @keyframes fadeIn {
@@ -325,6 +332,22 @@ body {
   animation: pulse-subtle 2s ease-in-out infinite;
 }
 
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease-in-out infinite;
+}
+
 
 /* Scroll reveal animations */
 @supports (animation-timeline: view()) {
@@ -354,4 +377,38 @@ select {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+
+  /* Better touch targets */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improved card spacing on mobile */
+  .premium-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Better section spacing */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Improved carousel navigation buttons */
+  .carousel-nav-btn {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+}
+
+/* Smooth scrolling for carousel */
+.carousel-smooth {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
